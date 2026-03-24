@@ -1,0 +1,68 @@
+/*Semantic CSS: Es un conjunto de estilos que se utilizan para definir la apariencia de los componentes de una aplicación*/
+
+
+:root{
+    /*============= Brand Colors =============*/
+    --semantic-brand: var(--color-primary-800) ;
+    --semantic-brand-hover: var(--color-primary-950) ; /*generalmente es un tono más oscuro que el color*/
+    --semantic-brand-soft: var(--color-primary-200) ; 
+    --semantic-brand-soft-hover: var(--color-primary-300) ; 
+
+
+
+    /*=========Background===================*/
+
+    --semantic-background: var(--color-neutral-200); /*Fondo de la app*/
+    --semantic-surface: var(--color-neutral-50); /* Fondo de modales , cards */
+    --semantic-surface-muted: var(--color-neutral-400); /*Zonas Secundarias con menor importancia*/
+    --semantic-background-inverse: var(--color-neutral-950) ;
+
+
+
+    /*===================== Text ===============================*/
+    --semantic-text-primary: var(--color-neutral-900); 
+    --semantic-text-secundary: var(--color-neutral-700);
+    --semantic-text-muted: var(--color-neutral-500);
+    --semantic-text-inverse: var(--color-neutral-50);
+
+
+
+
+    /*================ BORDER ================*/
+    --semantic-border: var(--color-neutral-400);  /*Borde principal de todos los componentes */
+    --semantic-border-scrong: var(--color-neutral-700);/* Bordes más fuertes*/
+
+
+    /*================ FOCUS ====================*/ 
+    --semantic-focus-ring: var(--color-primary-700);
+    --semanitc-focus-border: var(--color-primary-500);
+
+
+
+    /*=======================STATE===========================*/
+    --semantic-sucess: var(--color-primary-950);
+    --semantic-warning: var(--color-tertiary-950);
+    --semantic-error: var(--color-secundary-950);
+
+
+
+
+
+    /*====================== TYPOGRAPHY ==================*/
+    --semantic-font-size-display: var(--fs-xxl); /*Texto de alto impacto, Protagonista*/
+    --semantic-font-size-h1: var(--fs-lg); 
+    --semantic-font-size-h2: var(--fs-md); 
+    --semantic-font-size-h3: var(--fs-sm);
+    --semantic-font-size-body: var(--fs-xs);
+    --semantic-font-size-medium: var(--fs-xxs);
+    --semantic-font-size-small: var(--fs-xxxs);
+    --semantic-font-size-caption: var(--fs-xxxs); /*Caption es el texto auxiliar*/
+    
+
+
+
+    /*================== Font Weight =================*/
+    --semantic-font-weight-heading: var(--font-weight-bold);
+    --semantic-font-weight-body: var(--font-weight-regular);
+    --semantic-font-weight-label: var(--font-weight-regular);
+}
