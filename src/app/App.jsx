@@ -1,19 +1,16 @@
-import Input from "../shared/components/Input"
+import {CreateUserPage} from "@/features/users/"
 
 export default function App(){
     return(
-<div className="min-h-screen bg-green-800 flex items-center justify-center">
-    <h1 className="text-white text-4xl font-bold">
-    Con Yampi es Ricoprogramar...
+    <div className="min-h text-center grid grid-cols-1 gap-4 mt-5">
+
+    <h1 className="text-white text-4xl font-bold mb-32 bg-fuchsia-800  p-6">
+    Con Yampi se siente Ricoprogramar...
     </h1>
+    
+    <CreateUserPage />
 
 
-
-
-    <Input
-    label= "Nombre"
-    placeholder= "Ingrese su nombre" 
-    />
 </div>
 
     )

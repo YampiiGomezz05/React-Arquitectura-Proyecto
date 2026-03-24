@@ -10,20 +10,26 @@ return (
     <label
         className="
         block
-        text-caption
+        text-[8px]
         mb-1
-        text-text-primary
+        place-self-start
         "
     >
         {label}
     </label>
 
+
       {/* Contenedor del input */}
-    <div className="relative">
+    <div className="relative
+                    h-12
+                    flex
+                    items-center ">
         
         {/* Área interactiva invisible */}
         <div
-        className="absolute inset-0"
+        className="
+        absolute 
+        inset-0"
         onMouseDown={(e) => {
             e.preventDefault();
             e.currentTarget.nextSibling.focus();
@@ -51,11 +57,7 @@ return (
         />
 
     </div>
-
-      {/* Feedback Message */}
-    <div>
-        {/* Aquí puedes poner errores o mensajes */}
-    </div>
+        {/* Feedback message*/}
 
     </div>
 );
