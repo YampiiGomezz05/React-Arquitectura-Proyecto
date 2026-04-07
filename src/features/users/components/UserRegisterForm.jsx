@@ -1,9 +1,17 @@
-import {Input, Button} from "@/shared"
+import {useState , useEffect} from "react"; 
+import {Input, Button, DeleteCounter2 , Select} from "@/shared"
+import { getDocumentType } from "../services/SelectService";
 
 
 export default function UserRegisterForm (){
 
-    //Handl
+    const [DocumentType , setDocumentType] = useState ([])
+
+    useEffect(() => {
+        getDocumentType().then(setDocumentType)
+    }, []);
+
+    //Handle
 
     const handleNameChange = (e) => {
         console.log("Nombre: "  + e.target.value)
@@ -34,36 +42,55 @@ export default function UserRegisterForm (){
     type="email" 
     onBlur = {handleEmailBlur}
     />
+
     <Input
-    label= "Contraseña"
-    placeholder= "Ingrese su contraseña"
-    type="password" 
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
     />
+
     <Input
-    label= "Edad"
-    placeholder= "Ingrese su Edad"
-    type="number" 
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
     />
+
     <Input
-    label= "Edad"
-    placeholder= "Ingrese su Edad"
-    type="number" 
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
     />
+
     <Input
-    label= "Edad"
-    placeholder= "Ingrese su Edad"
-    type="number" 
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
     />
+
     <Input
-    label= "Edad"
-    placeholder= "Ingrese su Edad"
-    type="number" 
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
     />
+
     <Input
-    label= "Edad"
-    placeholder= "Ingrese su Edad"
-    type="number" 
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
     />
+
+    <Select
+        label= "Tipo de Documento"
+        name= "DocumentType"
+        options= {DocumentType}
+        />
+
 </div>
 
 {/* Actions*/ }
@@ -82,6 +109,12 @@ export default function UserRegisterForm (){
 </div>
 
     </form>
+    {/* <DeleteCounter/>
+
+    <DeleteEfect/> */}
+
+    <DeleteCounter2/>
+
     </div>
     )
 }
