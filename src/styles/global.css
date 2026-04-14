@@ -1,58 +1,41 @@
 @import url(tokens.css);
 @import url(semantic.css);
-@import "tailwindcss";
+@import "tailwindcss"; /* Esta línea debe quedar al final para que funcione*/
 
-@theme{
-    /*======= BRAND==============*/
+@theme {
 
+    /* ====== BRAND ====== */
     --color-brand: var(--semantic-brand);
     --color-brand-hover: var(--semantic-brand-hover);
     --color-brand-soft: var(--semantic-brand-soft);
-
-
-
-
-
-    /* ============ Background ================ */
+    --color-brand-soft-hover: var(--semantic-brand-soft-hover);
+    
+    /* ====== BACKGROUND ====== */
     --color-background: var(--semantic-background);
     --color-surface: var(--semantic-surface);
     --color-surface-muted: var(--semantic-surface-muted);
-    --color-backgorund-inverse: var(--semantic-backgorund-inverse);
-
-
-
-
-
-    /*========= TEXT =================*/
+    --color-surface-inverse: var(--semantic-surface-inverse);
+    
+    /* ====== TEXT ====== */
     --color-text-primary: var(--semantic-text-primary);
     --color-text-secondary: var(--semantic-text-secondary);
     --color-text-muted: var(--semantic-text-muted);
     --color-text-inverse: var(--semantic-text-inverse);
-
-
-    /*================== Border  =================*/
+    
+    /* ====== BORDER ====== */
     --color-border: var(--semantic-border);
-    --color-border-storng: var(--semantic-border-strong);
-
-
-
-
-    /* ================= FOCUS ==================*/
-
-
+    --color-border-strong: var(--semantic-border-strong);
+    
+    /* ====== FOCUS ====== */
     --color-focus-ring: var(--semantic-focus-ring);
     --color-focus-border: var(--semantic-focus-border);
-
-/* ============= STATE ==============*/
-    --color-sucess: var(--semantic-sucess);
+    
+    /* ====== STATE ====== */
+    --color-succes: var(--semantic-success);
     --color-warning: var(--semantic-warning);
     --color-error: var(--semantic-error);
-
-
-
-
-/* ============ TYPOGRAPHY ====================*/
-
+    
+    /* ====== TYPOGRAPHY ====== */
     --text-display: var(--semantic-font-size-display);
     --text-h1: var(--semantic-font-size-h1);
     --text-h2: var(--semantic-font-size-h2);
@@ -61,12 +44,14 @@
     --text-medium: var(--semantic-font-size-medium);
     --text-small: var(--semantic-font-size-small);
     --text-caption: var(--semantic-font-size-caption);
+    
+    /* ====== FONT WEIGHT ====== */
 
-
-
-    /*============== FONT WEIGHT ====================*/
     --font-heading: var(--semantic-font-weight-heading);
     --font-body: var(--semantic-font-weight-body);
-    --font-label    : var(--semantic-font-weight-label);
+    --font-label: var(--semantic-font-weight-label);
 
-    }
+    
+
+
+}

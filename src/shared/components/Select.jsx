@@ -1,13 +1,16 @@
 export default function Select({
     label,
     name,
+    error,
+    value,
+    onChange,
     options = [],
 }) {
     return (
         <div className="w-[320px]">
 
             {label && (
-            <label className="block text-caption mb-1 text-text-secondary place-self-start">
+            <label className="block text-small mb-1 text-text-secondary-500 place-self-start">
             
                 {label}
             
@@ -17,6 +20,8 @@ export default function Select({
             
             <select 
             name = {name}
+            value={value}
+            onChange={onChange}
             className="
             w-full
             h-12
@@ -24,6 +29,10 @@ export default function Select({
             border
             border-border
             px-4
+
+            hover:border
+            hover:border-2
+            hover:border-focus-border
             
             ">
 
@@ -39,7 +48,11 @@ export default function Select({
                 ))}
 
 
-            </select>
+    </select>
+        {error && ( <p className="text-caption text-red-800 place-self-start">
+        {error}   
+        </p>)}
         </div>
+
     )
 }
