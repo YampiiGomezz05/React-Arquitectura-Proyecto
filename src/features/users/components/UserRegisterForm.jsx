@@ -16,9 +16,9 @@ export default function UserRegisterForm (){
     const handleNameChange = (e) => {
         console.log("Nombre: "  + e.target.value)
     }
-    const handleEmailBlur = (e) => {
-        console.log("Email: "  + e.target.value)
-    }
+    // const handleEmailBlur = (e) => {
+    //     console.log("Email: "  + e.target.value)
+    // }
 
 
     return(
@@ -32,64 +32,61 @@ export default function UserRegisterForm (){
 
     <Input
     label= "Nombre"
+    name= "userName"
     placeholder= "Ingrese su Nombre" 
     type="input"
     onChange ={handleNameChange}
     />
+    
     <Input
     label= "Correo"
+    name= "userEmail"
     placeholder= "Ingrese su correo"
     type="email" 
-    onBlur = {handleEmailBlur}
     />
 
     <Input
-    label= "Nombre"
-    placeholder= "Ingrese su Nombre" 
-    type="input"
-    onChange ={handleNameChange}
+    label= "Telefono"
+    name= "userPhone"
+    placeholder= "Ingrese su telefono" 
+    type="tel"
     />
 
-    <Input
-    label= "Nombre"
-    placeholder= "Ingrese su Nombre" 
-    type="input"
-    onChange ={handleNameChange}
-    />
-
-    <Input
-    label= "Nombre"
-    placeholder= "Ingrese su Nombre" 
-    type="input"
-    onChange ={handleNameChange}
-    />
-
-    <Input
-    label= "Nombre"
-    placeholder= "Ingrese su Nombre" 
-    type="input"
-    onChange ={handleNameChange}
-    />
-
-    <Input
-    label= "Nombre"
-    placeholder= "Ingrese su Nombre" 
-    type="input"
-    onChange ={handleNameChange}
-    />
-
-    <Input
-    label= "Nombre"
-    placeholder= "Ingrese su Nombre" 
-    type="input"
-    onChange ={handleNameChange}
-    />
 
     <Select
-        label= "Tipo de Documento"
-        name= "DocumentType"
-        options= {DocumentType}
-        />
+    label= "Tipo de Documento"
+    name= "userDocumentType"
+    options= {DocumentType}
+    />
+
+    <Input
+    label= "Numero de Documento"
+    name= "userDocumentNumber"
+    placeholder= "Ingrese su Numero de documento" 
+    />
+
+    <Input
+    label= "Contraseña"
+    name= "userPassword"
+    placeholder= "Ingrese su contraseña" 
+    type="password"
+    onChange ={handleNameChange}
+    />
+
+
+    <Input
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
+    />
+
+    <Input
+    label= "Nombre"
+    placeholder= "Ingrese su Nombre" 
+    type="input"
+    onChange ={handleNameChange}
+    />
 
 </div>
 

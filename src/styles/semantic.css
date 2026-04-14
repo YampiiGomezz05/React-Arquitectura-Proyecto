@@ -23,7 +23,7 @@
     --semantic-text-primary: var(--color-neutral-900); 
     --semantic-text-secundary: var(--color-neutral-700);
     --semantic-text-muted: var(--color-neutral-500);
-    --semantic-text-inverse: var(--color-neutral-50);
+    --semantic-text-inverse: var(--color-white);
 
 
 
