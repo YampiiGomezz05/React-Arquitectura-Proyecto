@@ -2,6 +2,7 @@ import {useState , useEffect} from "react";
 import {Input, Button, DeleteCounter2 , Select} from "@/shared"
 import { getDocumentType } from "../services/SelectService";
 import {userSchema} from "../schemas/userSchema";
+import { Checkbox } from "../../../shared";
 
 
 export default function UserRegisterForm (){
@@ -14,6 +15,11 @@ export default function UserRegisterForm (){
     userDocumentType: "",
     userDocumentNumber: "",
     userPassword: "",
+
+    //Flags booleanos *Se hace para cumplir de una con los requerimientos 
+    isStaff:false,
+    isActive: true,
+    isSuperUser: false
     });
     const [errors, setErrors] = useState ({})
 
@@ -28,13 +34,14 @@ export default function UserRegisterForm (){
 
     const handleChange = (e) => {
     // se obtiene el nombre del campo y su valor 
-    const { name, value } = e.target;
+    const { name, value , type , Checkbox , checked} = e.target;
     
     setformData((prev) => ({
         // Se copian todos los valores anteriores del estado
         ...prev,
         // Se actualiza únicamente lo que cambió
-        [name]: value,
+        [name]: type  === "checkbox"  ? checked : value,
+
     }));
 }
 
@@ -89,7 +96,7 @@ export default function UserRegisterForm (){
     onSubmit={handleSubmit}
     >
     { /* Inputs*/ }
-        <div className=" grid grid-cols-2 gap-6 my-0 mx-auto">
+        <div className=" grid grid-cols-3 gap-6 my-0 mx-auto">
 
     <Input
     label= "Nombre"
@@ -150,6 +157,29 @@ export default function UserRegisterForm (){
     error = {errors.userPassword}
     />
 
+    <Checkbox
+    id="isStaff"
+    name="isStaff"
+    label="Es Staff"
+    checked={formData.isStaff}
+    onChange={handleChange}
+    />
+
+    <Checkbox
+    id="isSuperUser"
+    name="isSuperUser"
+    label="Es Super User"
+    checked={formData.isSuperUser}
+    onChange={handleChange}
+    />
+
+    <Checkbox
+    id="isActive"
+    name="isActive"
+    label="Está Activo"
+    checked={formData.isActive}
+    onChange={handleChange}
+    />
 
 </div>
 
@@ -170,12 +200,7 @@ export default function UserRegisterForm (){
     </Button>
 </div>
 
-    </form>
-    {/* <DeleteCounter/>
-
-    <DeleteEfect/> */}
-
-    <DeleteCounter2/>
+    </form> 
 
     </div>
     )
