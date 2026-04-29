@@ -1,12 +1,24 @@
 import {useState , useEffect} from "react"; 
-import {Input, Button, DeleteCounter2 , Select} from "@/shared"
+import {Input,
+    Button,
+    DeleteCounter2 ,
+    Select , 
+    IconButton ,
+    DropDown,
+    DropdownContent ,
+    DropDownTrigger ,
+    DropdownItem 
+    }  from "@/shared"
 import { getDocumentType } from "../services/SelectService";
 import {userSchema} from "../schemas/userSchema";
 import { Checkbox } from "../../../shared";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { SquareArrowRightEnter , Menu} from "lucide-react";
+
 
 
 export default function UserRegisterForm (){
-
+    const navigate = useNavigate();
     const [DocumentType , setDocumentType] = useState ([])
     const [formData , setformData] = useState({
     userName: "",
@@ -89,14 +101,14 @@ export default function UserRegisterForm (){
 
     return(
 <div>
-    <h1 className="text text-primary text-2xl mb-6">
+    <h1 className="text text-primary text-2xl mb-6 text-center pt-6">
         REGISTRO DE USUARIOS
     </h1>
     <form className="grid grid-cols-1 place-items-center gap-6"
     onSubmit={handleSubmit}
     >
     { /* Inputs*/ }
-        <div className=" grid grid-cols-3 gap-6 my-0 mx-auto">
+        <div className=" grid grid-cols-2 gap-6 my-0 mx-auto border p-[24px] rounded-[6px]">
 
     <Input
     label= "Nombre"
@@ -180,25 +192,65 @@ export default function UserRegisterForm (){
     checked={formData.isActive}
     onChange={handleChange}
     />
-
-</div>
-
 {/* Actions*/ }
 <div className="flex items-end justify-center gap-6">
     <Button 
     type = "button"
     variant="secondary"
-    size="sm">
+    size="sm"
+    onClick={() => navigate(-1)}
+    >
     Cancelar
     </Button>
 
     <Button 
     type = "submit"
     variant="primary"
-    size="sm">
+    size="sm"
+    >
     Guardar
     </Button>
+
+
+    {/* Icon Button */}
+    <Link to ='/dashboard'>
+    <IconButton
+    variant = "ghost"
+    >
+    <SquareArrowRightEnter/>
+    </IconButton>
+    </Link>
+
+
+
+{/* ======== Dropdown ======== */}
+                        <div className="p-10">
+                            <DropDown>
+                                <DropDownTrigger>
+                                    <IconButton aria-label="Menú de usuario">
+                                        <Menu/>
+                                    </IconButton>
+                                </DropDownTrigger>
+
+                                <DropdownContent className="right-0 w-48">
+                                    <DropdownItem>
+                                        <Link to="/auth" className="block w-full">
+                                        Autenticación
+                                        </Link>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <Link to="/dashboard" className="block w-full">
+                                        Panel de control
+                                        </Link>
+                                    </DropdownItem>
+                                </DropdownContent>
+                            </DropDown>
+                        </div>
+    
 </div>
+
+</div>
+
 
     </form> 
 
