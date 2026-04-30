@@ -1,6 +1,8 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import {AuthLayout , DashBoardLayout} from "@/shared"  
 import {CreateUserPage} from "@/features/users"
+import { Login } from "@/features/auth";
+
 
     const router =  createBrowserRouter([
     {
@@ -10,14 +12,14 @@ import {CreateUserPage} from "@/features/users"
     {
         path: "/auth",
         element: <AuthLayout/>,
-        children: [{index: true , element: <h1>Inicio Auth</h1>}]
+        children: [{index: true , element: <h1></h1>}]
     },
     {
         path: "/dashboard",
         element: <DashBoardLayout/>,
         children: [
-            {index: true , element: <h1>Inicio Dashboard</h1>},
-            {path: "contacto", element: <h1>Contacto</h1>},
+            {index: true , element: <CreateUserPage/>},
+            {path: "/dashboard/auth", element: <Login/>},
             {path: "usuarios", element: <h1>Usuarios</h1>},
             {path: "productos", element: <h1>Productos</h1>}
         ],

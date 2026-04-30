@@ -231,18 +231,20 @@ export default function UserRegisterForm (){
                                         <Menu/>
                                     </IconButton>
                                 </DropDownTrigger>
-
                                 <DropdownContent className="right-0 w-48">
-                                    <DropdownItem>
-                                        <Link to="/auth" className="block w-full">
-                                        Autenticación
-                                        </Link>
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        <Link to="/dashboard" className="block w-full">
-                                        Panel de control
-                                        </Link>
-                                    </DropdownItem>
+
+                                        <DropdownItem>
+                                            <Link to="/auth" className="block w-full">
+                                            Autenticación
+                                            </Link>
+                                        </DropdownItem>
+                                        <DropdownItem>
+                                            
+                                            <Link to="/dashboard" className="block w-full">
+                                            Panel de control
+                                            </Link>
+                                        </DropdownItem>
+
                                 </DropdownContent>
                             </DropDown>
                         </div>

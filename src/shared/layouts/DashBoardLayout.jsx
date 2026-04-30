@@ -3,8 +3,8 @@ import heroBg from "@/assets/images/bg-1.jpg"
 import { ArrowBigLeft} from "lucide-react";
 import { Link } from "react-router-dom";
 import { IconButton } from "../components/IconButton";
-
-
+import { Navbar } from "@/shared";
+import CreateUserPage from "../../features/users/pages/CreateUserPage";
 
 
 export default function MainLayout (){
@@ -22,10 +22,13 @@ export default function MainLayout (){
             <ArrowBigLeft/>
 
             </IconButton>
-
-
-
             </Link>
+            <Navbar />
+                {/* Contenido dinamico de las páginas  */}
+            <main>
+                {/* <CreateUserPage/> */}
+                <Outlet/>
+            </main>
             </div>
             
     )
