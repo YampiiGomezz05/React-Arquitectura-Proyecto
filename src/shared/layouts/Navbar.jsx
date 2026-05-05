@@ -6,12 +6,28 @@ import {Input,
     DeleteCounter2 ,
     Select , 
     IconButton ,
+    Switch,
     DropDown,
     DropdownContent ,
     DropDownTrigger ,
     DropdownItem 
     }  from "@/shared"
+import { useState } from "react";
 export default function Navbar (){
+
+
+    //Estado que controla el switch
+    const [isActive, setIsActive] = useState(true);
+
+    //Manejador del estado del switch👌
+    const handleStatusChange = (value) => {
+        setIsActive(value);
+
+
+        // Aqui generalmente  va el llamado de la api😢
+            console.log("nuevo estado" , value)
+    }
+
 
     return (
         <nav className="w-full bg-trasparent border-b-2"> 
@@ -25,6 +41,17 @@ export default function Navbar (){
                     <img src={logo} alt="logo" className="h-12" />
                     </Link>
                     </div>
+
+
+
+                    {/* Switch */}
+                    <Switch
+                    checked={isActive}
+                    onChange={handleStatusChange}
+                    size="md"
+                    />
+
+                    
                     {/* Links de Navegación */}
                     <ul className="hidden md:flex items-center gap-6">
                         <li>
