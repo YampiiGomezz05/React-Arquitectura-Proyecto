@@ -1,36 +1,24 @@
-import { useState } from "react";
+import React, { useState, useMemo } from 'react';
 
-export default function DeleteCounter(){
-    const [count,setCount] = useState(0)
-    return(
-        <div>
-            <p>
-                Contador: {count} 
-                <button onClick={() => setCount(count + 1)} className="border p-3">
-                    incrementar
-                </button>
-            </p>
-        </div>
-    );
+function EjemploUseMemo({ datos }) {
+  const [contador, setContador] = useState(0);
 
+  // 1. Cálculo costoso memorizado
+  const datosProcesados = useMemo(() => {
+    console.log('Procesando datos...');
+    // Imagina una operación pesada aquí
+    return datos.filter(item => item > 5);
+  }, [datos]); // 2. Dependencia: solo se recalcula si 'datos' cambia
+
+  return (
+    <div>
+      <p>Contador: {contador}</p>
+      <button onClick={() => setContador(contador + 1)}>Incrementar</button>
+      {/* Al hacer click, el componente se renderiza, 
+          pero 'datosProcesados' NO se recalcula */}
+      <ul>
+        {datosProcesados.map(item => <li key={item}>{item}</li>)}
+      </ul>
+    </div>
+  );
 }
-// Hacer la actividad anterior con una función
-
-
-// export default function DeleteCounter (){
-//     let count = 0;
-
-//     const incrementar = () => {
-//         count = count + 1;
-//         console.log("Nuevo Valor" , count)
-//     }
-
-//     return (
-//         <div>
-//                 <p>
-//                     Contador : {count}
-//                     <button onClick={incrementar} className="border p-3">Incrementar</button>
-//                 </p>
-//         </div>
-//     )
-// }

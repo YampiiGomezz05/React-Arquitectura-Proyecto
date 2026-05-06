@@ -2,6 +2,7 @@ import { Card } from "@/shared";
 import { products } from "../../../../data/products/Products";
 
 
+
 export default function HomePage (){
 
     return (
@@ -30,6 +31,8 @@ export default function HomePage (){
                 
             
             </div>
+
+        
         </div>
     )
 }

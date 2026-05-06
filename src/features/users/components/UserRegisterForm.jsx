@@ -7,7 +7,8 @@ import {Input,
     DropDown,
     DropdownContent ,
     DropDownTrigger ,
-    DropdownItem 
+    DropdownItem,
+    FileInput
     }  from "@/shared"
 import { getDocumentType } from "../services/SelectService";
 import {userSchema} from "../schemas/userSchema";
@@ -27,6 +28,7 @@ export default function UserRegisterForm (){
     userDocumentType: "",
     userDocumentNumber: "",
     userPassword: "",
+    userImage: [],
 
     //Flags booleanos *Se hace para cumplir de una con los requerimientos 
     isStaff:false,
@@ -192,6 +194,20 @@ export default function UserRegisterForm (){
     checked={formData.isActive}
     onChange={handleChange}
     />
+
+    {/* File Input */}
+
+    <FileInput
+    value={formData.userImage}
+    onChange={(files) => setformData((prev)=> ({...prev, userImage: files}))
+        }
+        multiple={true}
+        />
+        {errors.userImage && (
+            <span className="text-red-500 text-sm">{errors.userImage}</span>
+        )}
+
+        
 {/* Actions*/ }
 <div className="flex items-end justify-center gap-6">
     <Button 
